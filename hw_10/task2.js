@@ -1,12 +1,3 @@
-// const myPromise = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         let url = "https://jsonplaceholder.typicode.com/todos/1"
-//         fetch(url)
-//         .then
-//     }, timeout);
-    
-// })
-
 async function fetchTodo(idNumber){
     let url = `https://jsonplaceholder.typicode.com/todos/${idNumber}`;
     return fetch(url).then(response => response.json())
@@ -27,7 +18,7 @@ const promiseAllResult = Promise.all([fetchTodo(1), fetchUsers(1)])
   .catch(error => console.error('Error in Promise.all:', error));
 
   console.log(promiseAllResult)
-  
+
 
   const promiseRaseResult = Promise.race([fetchTodo(1), fetchUsers(1)])
     .then((result) => {
